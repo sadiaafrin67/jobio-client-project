@@ -15,7 +15,7 @@ const Banner = () => {
              JobIO is one of the most biggest and trust worthymarket place ever. Find your dream job here
             </p>
             <div>
-            <form  className=" flex justify-center items-center  mx-auto text-center ">
+            <form  className="md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"
@@ -52,14 +52,15 @@ const Banner = () => {
         />
         <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
           <div className="text-white space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl font-bold">
+            <h2 className="text-6xl   font-bold">
              Searching For A Job
             </h2>
             <p>
              JobIO is one of the most biggest and trust worthy marketplace ever. Find your dream job here
             </p>
             <div>
-            <form  className=" flex justify-center items-center  mx-auto text-center ">
+
+            <form  className=" md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"
@@ -103,7 +104,7 @@ const Banner = () => {
              JobIO is one of the most biggest and trust worthy marketplace ever. Find your dream job here
             </p>
             <div>
-            <form  className=" flex justify-center items-center  mx-auto text-center ">
+            <form  className="md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"
@@ -144,7 +145,7 @@ const Banner = () => {
              JobIO is one of the most biggest and trust worthy marketplace ever. Find your dream job here
             </p>
             <div>
-            <form  className=" flex justify-center items-center  mx-auto text-center ">
+            <form  className="md:w-[470px] flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"

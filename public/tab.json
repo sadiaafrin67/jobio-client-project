@@ -1,0 +1,125 @@
+[
+    {
+      "id": "webdev_1",
+      "email": "webdev_employer1@example.com",
+      "jobTitle": "Full Stack Developer",
+      "deadline": "2023-12-15",
+      "description": "Experienced full-stack developer needed for a dynamic web app. Work on cutting-edge projects, deadline December 15th. Compensation: $5,000-$8,000.",
+      "category": "Web Development",
+      "minPrice": 5000,
+      "maxPrice": 8000
+    },
+    {
+      "id": "webdev_2",
+      "email": "webdev_employer2@example.com",
+      "jobTitle": "Frontend Developer",
+      "deadline": "2023-12-10",
+      "description": "Skilled frontend developer wanted to enhance website UI. Deadline December 10th. Compensation: $4,000-$6,000.",
+      "category": "Web Development",
+      "minPrice": 4000,
+      "maxPrice": 6000
+    },
+    {
+      "id": "webdev_3",
+      "email": "webdev_employer3@example.com",
+      "jobTitle": "WordPress Developer",
+      "deadline": "2023-12-20",
+      "description": "Hiring WordPress expert to customize and optimize company blog. Showcase skills in visually appealing blogs. Deadline December 20th. Compensation: $3,000-$5,000.",
+      "category": "Web Development",
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "id": "webdev_4",
+      "email": "webdev_employer4@example.com",
+      "jobTitle": "Backend Developer",
+      "deadline": "2023-12-18",
+      "description": "Backend developer needed for scalable server-side applications. Strong programming skills required. Deadline December 18th. Compensation: $6,000-$9,000.",
+      "category": "Web Development",
+      "minPrice": 6000,
+      "maxPrice": 9000
+    },
+    {
+      "id": "marketing_1",
+      "email": "marketing_employer1@example.com",
+      "jobTitle": "Social Media Manager",
+      "deadline": "2023-12-12",
+      "description": "Dynamic Social Media Manager wanted to enhance online presence. Proven track record. Deadline December 12th. Compensation: $2,500-$4,500.",
+      "category": "Digital Marketing",
+      "minPrice": 2500,
+      "maxPrice": 4500
+    },
+    {
+      "id": "marketing_2",
+      "email": "marketing_employer2@example.com",
+      "jobTitle": "SEO Specialist",
+      "deadline": "2023-12-14",
+      "description": "Experienced SEO Specialist needed to improve website ranking. Deep understanding of SEO principles. Deadline December 14th. Compensation: $3,000-$5,500.",
+      "category": "Digital Marketing",
+      "minPrice": 3000,
+      "maxPrice": 5500
+    },
+    {
+      "id": "marketing_3",
+      "email": "marketing_employer3@example.com",
+      "jobTitle": "Content Marketer",
+      "deadline": "2023-12-16",
+      "description": "Creative Content Marketer wanted to produce compelling content. Passion for storytelling. Deadline December 16th. Compensation: $2,000-$4,000.",
+      "category": "Digital Marketing",
+      "minPrice": 2000,
+      "maxPrice": 4000
+    },
+    {
+      "id": "marketing_4",
+      "email": "marketing_employer4@example.com",
+      "jobTitle": "Email Marketing Specialist",
+      "deadline": "2023-12-22",
+      "description": "Email Marketing Specialist wanted to create effective campaigns. Deadline December 22nd. Compensation: $3,500-$6,000.",
+      "category": "Digital Marketing",
+      "minPrice": 3500,
+      "maxPrice": 6000
+    },
+    {
+      "id": "design_1",
+      "email": "design_employer1@example.com",
+      "jobTitle": "UI/UX Designer",
+      "deadline": "2023-12-17",
+      "description": "Talented UI/UX designer needed to improve website experience. Strong portfolio required. Deadline December 17th. Compensation: $4,000-$7,000.",
+      "category": "Graphic Design",
+      "minPrice": 4000,
+      "maxPrice": 7000
+    },
+    {
+      "id": "design_2",
+      "email": "design_employer2@example.com",
+      "jobTitle": "Logo Designer",
+      "deadline": "2023-12-19",
+      "description": "Creative Logo Designer wanted to craft a unique logo. Keen eye for design. Deadline December 19th. Compensation: $2,500-$4,500.",
+      "category": "Graphic Design",
+      "minPrice": 2500,
+      "maxPrice": 4500
+    },
+    {
+      "id": "design_3",
+      "email": "design_employer3@example.com",
+      "jobTitle": "Illustrator",
+      "deadline": "2023-12-13",
+      "description": "Illustrator wanted to create eye-catching visuals. Strong illustration skills required. Deadline December 13th. Compensation: $3,000-$5,000.",
+      "category": "Graphic Design",
+      "minPrice": 3000,
+      "maxPrice": 5000
+    },
+    {
+      "id": "design_4",
+      "email": "design_employer4@example.com",
+      "jobTitle": "Motion Graphics Designer",
+      "deadline": "2023-12-21",
+      "description": "Motion Graphics Designer wanted to create dynamic visual content. Experience in motion graphics required. Deadline December 21st. Compensation: $4,500-$7,500.",
+      "category": "Graphic Design",
+      "minPrice": 4500,
+      "maxPrice": 7500
+    }
+  ]
+  
+ 
+  

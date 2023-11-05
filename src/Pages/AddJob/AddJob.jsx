@@ -1,59 +1,70 @@
-// import Swal from 'sweetalert2'
+
+
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddJob = () => {
-  const handleAddProduct = (e) => {
+
+
+    const {user} = useContext(AuthContext);
+    console.log(user)
+
+  const handleAddJob = (e) => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
-    const price = form.price.value;
-    const brand = form.brand.value;
+    const email = form.email.value;
+    const job = form.job.value;
+    const deadline = form.deadline.value;
     const description = form.description.value;
-    const rating = form.rating.value;
+    const maxprice = form.maxprice.value;
+    const minprice = form.minprice.value;
     const category = form.category.value;
-    const image = form.image.value;
 
     const newProduct = {
-      name,
-      price,
-      brand,
+      email,
+      job,
+      deadline,
       description,
-      rating,
-      category,
-      image,
+      maxprice,
+      minprice,
+      category
     };
-    console.log(newProduct);
+    // console.log(newProduct);
 
-    // fetch('https://touchup-brand-server.vercel.app/products', {
-    //     method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(newProduct)
-    // })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
+   
 
-    //         if(data.insertedId){
-    //             Swal.fire({
-    //                 title: 'Success!',
-    //                 text: 'Product Added Successfully',
-    //                 icon: 'success',
-    //                 confirmButtonText: 'Ok'
-    //               })
-    //         }
-    //     })
+    fetch('http://localhost:5000/jobs', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newProduct)
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your Job Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+            }
+        })
   };
 
   return (
     <div>
       <div className="bg-[#f1f3f5] rounded-xl md:p-24 p-4 my-20">
         <h2 className="text-3xl mb-10 text-center font-extrabold">
-          Add Your <span className="text-[#1e3c72]">Cosmetics</span>
+          Add Your <span className="text-[#1e3c72]">Jobs</span>
         </h2>
-        <form onSubmit={handleAddProduct}>
-          {/* form name and price row */}
+        <form onSubmit={handleAddJob}>
+          {/* form email and job row */}
           <div className="md:flex gap-4 mb-8">
             <div className="form-control   md:w-1/2 ">
               <label className="label ">
@@ -61,6 +72,8 @@ const AddJob = () => {
               </label>
               <label className="input-group ">
                 <input
+                  defaultValue={user?.email}
+                  readOnly
                   type="email"
                   placeholder="Place Your Email"
                   name="email"
@@ -84,7 +97,7 @@ const AddJob = () => {
             </div>
           </div>
 
-          {/* from brand and details row */}
+          {/* from deadline and description row */}
           <div className="md:flex gap-4 mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -115,17 +128,17 @@ const AddJob = () => {
             </div>
           </div>
 
-          {/* from rating and category row */}
+          {/* from maxprice and minprice row */}
           <div className="md:flex gap-4 mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text">Maximum Price</span>
               </label>
               <label className="input-group">
                 <input
-                  type="text"
-                  placeholder="Rating"
-                  name="rating"
+                  type="number"
+                  placeholder="Maximum Price"
+                  name="maxprice"
                   className="input form-border  input-bordered w-full"
                 />
               </label>
@@ -133,20 +146,20 @@ const AddJob = () => {
 
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Product Type</span>
+                <span className="label-text"> Minimum Price</span>
               </label>
               <label className="input-group">
                 <input
-                  type="text"
-                  placeholder="Product Type"
-                  name="category"
+                  type="number"
+                  placeholder="Minimum Price"
+                  name="minprice"
                   className="input form-border  input-bordered w-full"
                 />
               </label>
             </div>
           </div>
 
-          {/* from image URL row */}
+          {/* from category row */}
 
           <div className="mb-8 ">
             <div className="form-control w-full  ">
@@ -161,9 +174,9 @@ const AddJob = () => {
                   <option value="" disabled selected>
                     Select a category
                   </option>
-                  <option value="website">Web Development</option>
-                  <option value="web design"> Graphics Design</option>
-                  <option value="digital marketing">Digital Marketing</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Graphics Design"> Graphics Design</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
                 </select>
               </label>
             </div>
