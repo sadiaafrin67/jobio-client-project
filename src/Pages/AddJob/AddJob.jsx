@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const AddJob = () => {
 
@@ -10,9 +11,10 @@ const AddJob = () => {
     const {user} = useContext(AuthContext);
     console.log(user)
 
+
+
   const handleAddJob = (e) => {
     e.preventDefault();
-
     const form = e.target;
     const email = form.email.value;
     const job = form.job.value;
@@ -86,9 +88,11 @@ const AddJob = () => {
               <label className="label">
                 <span className="label-text">Job Title</span>
               </label>
+
               <label className="input-group">
                 <input
                   type="text"
+                  required
                   placeholder="Job Title"
                   name="job"
                   className="input  form-border input-bordered w-full"
@@ -106,6 +110,7 @@ const AddJob = () => {
               <label className="input-group">
                 <input
                   type="date"
+                  required
                   placeholder="Deadline"
                   name="deadline"
                   className="input  form-border input-bordered w-full"
@@ -120,6 +125,7 @@ const AddJob = () => {
               <label className="input-group">
                 <input
                   type="text"
+                  required
                   placeholder="Description"
                   name="description"
                   className="input form-border  input-bordered w-full"
@@ -137,6 +143,7 @@ const AddJob = () => {
               <label className="input-group">
                 <input
                   type="number"
+                  required
                   placeholder="Maximum Price"
                   name="maxprice"
                   className="input form-border  input-bordered w-full"
@@ -151,6 +158,7 @@ const AddJob = () => {
               <label className="input-group">
                 <input
                   type="number"
+                  required
                   placeholder="Minimum Price"
                   name="minprice"
                   className="input form-border  input-bordered w-full"
@@ -169,6 +177,7 @@ const AddJob = () => {
               <label className="">
                 <select
                   name="category"
+                  required
                   className="select select-bordered w-full"
                 >
                   <option value="" disabled selected>
@@ -181,12 +190,20 @@ const AddJob = () => {
               </label>
             </div>
           </div>
+          
+          <button type="submit" className="btn btn-block btn-grad form-border">Add Job</button>
+         
 
-          <input
+   
+        {/* <Link to='/myjob'>
+        <input
             type="submit"
             value="Add Job"
             className="btn btn-block btn-grad form-border"
           />
+        </Link> */}
+      
+
         </form>
       </div>
     </div>

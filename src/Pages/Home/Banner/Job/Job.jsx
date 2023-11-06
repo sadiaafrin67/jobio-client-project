@@ -1,7 +1,28 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../../Providers/AuthProvider";
+import { useContext, useEffect, useState } from "react";
 
 const Job = ({ job }) => {
+  console.log(job.email)
+
+  const [allow, setallow] = useState(false)
+
+  const {user} = useContext(AuthContext);
+  console.log(user?.email)
+
+  
+
+  // useEffect( () => {
+  //   if(job.email == user.email){
+  //     setallow(true)
+  //   }
+  // }, [job.email, user.email])
+  
+
+  
+
+
   return (
     <div className=" p-6 bg-white border border-gray-200 rounded-lg shadow ">
       <a href="#">
@@ -19,7 +40,7 @@ const Job = ({ job }) => {
 
       <Link
         to={`/job/${job._id}`}
-        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1e3c72] rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+        className={`inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1e3c72] rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ${allow ? 'disabled' : ''}`} 
       >
         Bid Now
         <svg
