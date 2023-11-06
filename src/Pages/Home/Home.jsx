@@ -1,12 +1,14 @@
-import Banner from "./Banner/Banner";
-import JobCat from "./Banner/JobCat/JobCat";
+
+import JobCat from "./Banner/Job/JobCat";
+import Banner from './Banner/Banner';
+
 
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
-            <JobCat></JobCat>
+          <Banner></Banner>
+          <JobCat></JobCat>
         </div>
     );
 };
