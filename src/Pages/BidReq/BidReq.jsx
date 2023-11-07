@@ -53,6 +53,8 @@ const BidReq = () => {
             if(data.modifiedCount > 0){
                 const remaining = bidReq.filter(bid => bid._id !== id);
                 const updated = bidReq.find(bid => bid._id == id);
+                console.log(updated)
+
                 updated.status = 'Accept';
                 const newBidReq = [updated, ...remaining];
                 setBidReq(newBidReq);

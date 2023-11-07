@@ -8,8 +8,10 @@ const MyBid = () => {
   const [myJob, setMyJobs] = useState([]);
   // console.log(job)
 
-  const filterJob = job?.filter((job) => job?.email == user?.email);
-  // console.log(filterJob);
+
+
+  const filterJob = myJob?.filter((job) => job?.email == user?.email);
+  console.log(filterJob);
 
   useEffect(() => {
     fetch("http://localhost:5000/jobs")
@@ -19,13 +21,7 @@ const MyBid = () => {
       });
   }, []);
 
-  // useEffect( () => {
-  //   fetch(`http://localhost:5000/jobpost`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setMyJobs(data)
-  //     })
-  // }, [])
+  
 
   useEffect(() => {
     fetch('http://localhost:5000/bids')
@@ -59,7 +55,7 @@ const MyBid = () => {
             </tr>
           </thead>
           <tbody>
-            {myJob.map((mybid) => (
+            {filterJob.map((mybid) => (
               <MyBidTable key={mybid._id} mybid={mybid}></MyBidTable>
             ))}
           </tbody>

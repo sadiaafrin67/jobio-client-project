@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 
 const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
-  const { _id, status} = mybid;
+  const { _id, status } = mybid;
   //   console.log(_id)
 
   return (
@@ -19,36 +19,29 @@ const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
         <td className="font-bold">Rejected</td>
       )} */}
 
-      {
-        status == 'Accept' && <td className="font-bold">Accpet</td>
-      }
+      {status == "Accept" && <td className="font-bold">Accpet</td>}
 
-      {
-        status?.status == 'Pending' && <td className="font-bold">Pending</td>
-      }
+      {status?.status == "Pending" && <td className="font-bold">Pending</td>}
 
-      {
-       status == 'Reject' && <td className="font-bold">Reject</td>
-      }
+      {status == "Reject" && <td className="font-bold">Reject</td>}
 
       <th>
-        {status?.status == 'Pending' &&     <div>
+        {status?.status == "Pending" && (
+          <div>
             <button
-           
               onClick={() => handlejobConfirm(_id)}
               className="btn btn-ghost btn-sm text-white  bg-[#2a5298]"
             >
-              Accept
+            Accept   
             </button>{" "}
             <button
-        
               onClick={() => handlejobReject(_id)}
               className="btn btn-ghost btn-sm text-white bg-[#2a5298]"
             >
-              Reject
+              Reject 
             </button>
-          </div>}
-
+          </div>
+        )}
 
         {status == "Accept" && (
           <div>
@@ -57,39 +50,37 @@ const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
               onClick={() => handlejobConfirm(_id)}
               className="btn btn-ghost btn-sm text-white  bg-[#2a5298]"
             >
-              Accept
+              Accept     
             </button>{" "}
             <button
               disabled
               onClick={() => handlejobReject(_id)}
               className="btn btn-ghost btn-sm text-white bg-[#2a5298]"
             >
-              Reject
+          Reject 
             </button>
           </div>
         )}
 
-{status == "Reject" && (
+        {status == "Reject" && (
           <div>
             <button
               disabled
               onClick={() => handlejobConfirm(_id)}
               className="btn btn-ghost btn-sm text-white  bg-[#2a5298]"
             >
-              Accept
+              Accept  
             </button>{" "}
             <button
               disabled
               onClick={() => handlejobReject(_id)}
               className="btn btn-ghost btn-sm text-white bg-[#2a5298]"
             >
-              Reject
+               Reject 
             </button>
           </div>
         )}
       </th>
-
-      
     </tr>
   );
 };
