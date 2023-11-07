@@ -1,37 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyBidTable from "./MyBidTable";
-import { useLoaderData } from "react-router-dom";
 
 const MyBid = () => {
-  const [myBid, setMyBid] = useState([]);
   const { user } = useContext(AuthContext);
   const [job, setJobs] = useState([]);
 
-  // const data = useLoaderData()
-  // console.log(data)
-
-  // const filterUser = myBid?.filter((myBid) => myBid?.email == user?.email);
   const filterJob = job?.filter((job) => job?.email == user?.email);
   console.log(filterJob);
 
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/mybid")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setMyBid(data);
-  //     });
-  // }, []);
-  // console.log(myBid)
-
   useEffect(() => {
-    fetch('http://localhost:5000/jobs')
-    .then(res => res.json())
-    .then(data => {
-        setJobs(data)
-    })
-   }, [])
+    fetch("http://localhost:5000/jobs")
+      .then((res) => res.json())
+      .then((data) => {
+        setJobs(data);
+      });
+  }, []);
 
   return (
     <div className="mt-10 mb-20 ">

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
@@ -7,10 +7,13 @@ import Swal from "sweetalert2";
 const Update = () => {
 
     const job = useLoaderData()
-    console.log(job._id)
+    // console.log(job._id)
 
     const {user} = useContext(AuthContext);
-    console.log(user)
+    // console.log(user)
+
+    const {id} = useParams()
+    console.log(id)
 
     const handleUpdateJob = (e) => {
         e.preventDefault();
@@ -34,12 +37,12 @@ const Update = () => {
         };
         
     
-        console.log(updateProduct);
+        // console.log(updateProduct);
 
 
 
     
-        fetch(`http://localhost:5000/jobs/${job._id}`, {
+        fetch(`http://localhost:5000/jobs/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +53,7 @@ const Update = () => {
             .then(data => {
                 console.log(data);
     
-                if(data.insertedId){
+                if(data.modifiedCount > 0){
                     Swal.fire({
                         title: 'Success!',
                         text: 'Your Job Updated Successfully',

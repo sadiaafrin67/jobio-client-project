@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useContext,  useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { useEffect } from "react";
 
 const Job = ({ job }) => {
   console.log(job.email)
@@ -12,13 +13,15 @@ const Job = ({ job }) => {
   const {user} = useContext(AuthContext);
   console.log(user?.email)
 
+
+
   
 
-  // useEffect( () => {
-  //   if(job.email == user.email){
-  //     setallow(true)
-  //   }
-  // }, [job.email, user.email])
+  useEffect( () => {
+    if(job.email == user?.email){
+      setallow(true)
+    }
+  }, [job.email, user])
   
 
   
@@ -61,6 +64,9 @@ const Job = ({ job }) => {
           />
         </svg>
       </Link>
+
+
+
     </div>
   );
 };

@@ -3,11 +3,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddJob = () => {
 
-
+const navigate = useNavigate()
     const {user} = useContext(AuthContext);
     console.log(user)
 
@@ -55,6 +55,7 @@ const AddJob = () => {
                     icon: 'success',
                     confirmButtonText: 'Ok'
                   })
+                  navigate('/myjob')
             }
         })
   };
@@ -195,7 +196,7 @@ const AddJob = () => {
 
           {/* <button type="submit" className="btn btn-block btn-grad form-border"><Link to='/myjob'>Add Job</Link></button> */}
 
-          <Link to='/myjob'><button type="submit" className="btn btn-block btn-grad form-border">Add Job</button></Link>
+          <button type="submit" className="btn btn-block btn-grad form-border">Add Job</button>
          
 
    

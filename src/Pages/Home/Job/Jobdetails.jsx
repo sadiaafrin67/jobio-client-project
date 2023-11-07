@@ -35,7 +35,7 @@ const Jobdetails = () => {
           {jobs.description}
         </p>
 
-       <JobBid></JobBid>
+       <JobBid jobs={jobs}></JobBid>
       </div>
     </div>
   );

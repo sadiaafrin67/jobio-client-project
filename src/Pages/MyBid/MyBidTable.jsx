@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 const MyBidTable = ({ mybid }) => {
+  console.log(mybid)
   return (
     <tr>
       <th>{mybid.job}</th>

@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Link, useParams } from "react-router-dom";
 
 
-const JobBid = () => {
+const JobBid = ({jobs}) => {
 
     const [job, setJobs] = useState([]);
 
@@ -40,8 +40,9 @@ const JobBid = () => {
         const email = form.email.value;
         const buyeremail = form.buyeremail.value;
         const bidprice = form.bidprice.value;
+        const jobTitle = job.job
         const deadline = form.deadline.value;
-        const newBid = {email, buyeremail, bidprice, deadline};
+        const newBid = {email, buyeremail, bidprice, deadline, jobTitle};
         console.log(newBid);
 
 

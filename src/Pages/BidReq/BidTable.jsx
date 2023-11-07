@@ -1,18 +1,25 @@
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 
-const BidTable = ({ mybid }) => {
-  console.log(mybid);
+const BidTable = ({ mybid, handlejobConfirm }) => {
+  const {_id, status} = mybid
+  console.log(_id)
+
+
+
+   
 
   return (
     <tr>
-      <th>{mybid.job}</th>
+      <th>{mybid.jobTitle}</th>
+  
       <td className="font-bold">{mybid.email}</td>
       <td className="font-bold">{mybid.deadline}</td>
       <td className="font-bold">{mybid.bidprice}</td>
       <td className="font-bold">Pending</td>
 
       <th>
-        <button className="btn btn-ghost btn-sm text-white bg-[#2a5298]">
+        <button onClick={() => handlejobConfirm(_id)}  className="btn btn-ghost btn-sm text-white bg-[#2a5298]">
           Accept
         </button>
       </th>
@@ -27,6 +34,7 @@ const BidTable = ({ mybid }) => {
 
 BidTable.propTypes = {
   mybid: PropTypes.object,
+  handlejobConfirm: PropTypes.func
 };
 
 export default BidTable;
