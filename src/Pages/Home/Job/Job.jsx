@@ -6,12 +6,13 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { useEffect } from "react";
 
 const Job = ({ job }) => {
-  console.log(job.email)
+  // console.log(job)
 
-  const [allow, setallow] = useState(false)
+  const [allow, setallow] = useState(true)
+  console.log(allow)
 
   const {user} = useContext(AuthContext);
-  console.log(user?.email)
+  // console.log(user?.email)
 
 
 
@@ -19,7 +20,7 @@ const Job = ({ job }) => {
 
   useEffect( () => {
     if(job.email == user?.email){
-      setallow(true)
+      setallow(false)
     }
   }, [job.email, user])
   
@@ -45,8 +46,9 @@ const Job = ({ job }) => {
 
       <Link
         to={`/job/${job._id}`}
-        className={`inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1e3c72] rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ${allow ? 'disabled' : ''}`} 
+       
       >
+        <button  className={`inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1e3c72] rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ${allow ? '' : 'disabled bg-gray-400 hover:bg-gray-400'}`} disabled={!allow}>
         Bid Now
         <svg
           className="w-3.5 h-3.5 ml-2"
@@ -63,6 +65,7 @@ const Job = ({ job }) => {
             d="M1 5h12m0 0L9 1m4 4L9 9"
           />
         </svg>
+        </button>
       </Link>
 
 

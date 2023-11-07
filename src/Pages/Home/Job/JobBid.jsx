@@ -42,8 +42,10 @@ const JobBid = ({jobs}) => {
         const bidprice = form.bidprice.value;
         const jobTitle = job.job
         const deadline = form.deadline.value;
-        const newBid = {email, buyeremail, bidprice, deadline, jobTitle};
-        console.log(newBid);
+        const status = {status: 'Pending'}
+        const newBid = {email, buyeremail, bidprice, deadline, jobTitle, status};
+        // console.log(newBid);
+       
 
 
        
@@ -71,6 +73,8 @@ const JobBid = ({jobs}) => {
        
 
     }
+
+    console.log(job.job)
 
     
 

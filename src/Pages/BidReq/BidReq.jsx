@@ -18,7 +18,7 @@ const BidReq = () => {
         const [job, setJobs] = useState([]);
 
         const filterJobs = job?.filter((job) => job?.email == user?.email);
-        console.log(filterJobs);
+        // console.log(filterJobs);
 
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const BidReq = () => {
                 setJobs(data)
             })
     }, [])
-    console.log(job)
+    // console.log(job)
 
     const handlejobConfirm = id => {
         fetch(`http://localhost:5000/bids/${id}`, {
@@ -54,6 +54,28 @@ const BidReq = () => {
                 const remaining = bidReq.filter(bid => bid._id !== id);
                 const updated = bidReq.find(bid => bid._id == id);
                 updated.status = 'Accept';
+                const newBidReq = [updated, ...remaining];
+                setBidReq(newBidReq);
+            }
+        })
+    }
+
+
+    const handlejobReject = id => {
+        fetch(`http://localhost:5000/bids/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'Reject'})
+        } )
+        .then(res => res.json())    
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount > 0){
+                const remaining = bidReq.filter(bid => bid._id !== id);
+                const updated = bidReq.find(bid => bid._id == id);
+                updated.status = 'Reject';
                 const newBidReq = [updated, ...remaining];
                 setBidReq(newBidReq);
             }
@@ -86,7 +108,7 @@ const BidReq = () => {
             </thead>
             <tbody>
               {filterJob.map((mybid) => (
-               <BidTable handlejobConfirm={handlejobConfirm} key={mybid._id} mybid={mybid}></BidTable>
+               <BidTable handlejobReject={handlejobReject}  handlejobConfirm={handlejobConfirm} key={mybid._id} mybid={mybid}></BidTable>
               ))}
             </tbody>
           </table>

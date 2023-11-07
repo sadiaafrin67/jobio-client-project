@@ -4,13 +4,13 @@ const MyBidTable = ({ mybid }) => {
   console.log(mybid)
   return (
     <tr>
-      <th>{mybid.job}</th>
+      <th>{mybid.jobTitle}</th>
       <td className="font-bold">{mybid.email}</td>
       <td className="font-bold">{mybid.deadline}</td>
       <td className="font-bold">Pending</td>
 
       <th>
-        <button className="btn btn-ghost btn-sm text-white bg-[#2a5298]">
+        <button  className="btn btn-ghost btn-sm text-white bg-[#2a5298]">
           Complete
         </button>
       </th>

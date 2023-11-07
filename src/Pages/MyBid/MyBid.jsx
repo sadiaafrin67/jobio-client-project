@@ -5,9 +5,11 @@ import MyBidTable from "./MyBidTable";
 const MyBid = () => {
   const { user } = useContext(AuthContext);
   const [job, setJobs] = useState([]);
+  const [myJob, setMyJobs] = useState([]);
+  // console.log(job)
 
   const filterJob = job?.filter((job) => job?.email == user?.email);
-  console.log(filterJob);
+  // console.log(filterJob);
 
   useEffect(() => {
     fetch("http://localhost:5000/jobs")
@@ -16,6 +18,24 @@ const MyBid = () => {
         setJobs(data);
       });
   }, []);
+
+  // useEffect( () => {
+  //   fetch(`http://localhost:5000/jobpost`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setMyJobs(data)
+  //     })
+  // }, [])
+
+  useEffect(() => {
+    fetch('http://localhost:5000/bids')
+      .then(res => res.json())
+      .then(data => {
+        setMyJobs(data)
+      })
+  }, [])
+
+  // console.log(myJob.jobTitle)
 
   return (
     <div className="mt-10 mb-20 ">
@@ -39,7 +59,7 @@ const MyBid = () => {
             </tr>
           </thead>
           <tbody>
-            {filterJob.map((mybid) => (
+            {myJob.map((mybid) => (
               <MyBidTable key={mybid._id} mybid={mybid}></MyBidTable>
             ))}
           </tbody>
