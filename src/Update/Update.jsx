@@ -1,18 +1,75 @@
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
+import Swal from "sweetalert2";
 
 
 const Update = () => {
 
     const job = useLoaderData()
-    console.log(job)
+    console.log(job._id)
+
+    const {user} = useContext(AuthContext);
+    console.log(user)
+
+    const handleUpdateJob = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const job = form.job.value;
+        const deadline = form.deadline.value;
+        const description = form.description.value;
+        const maxprice = form.maxprice.value;
+        const minprice = form.minprice.value;
+        const category = form.category.value;
+    
+        const updateProduct = {
+          email,
+          job,
+          deadline,
+          description,
+          maxprice,
+          minprice,
+          category
+        };
+        
+    
+        console.log(updateProduct);
+
+
+
+    
+        fetch(`http://localhost:5000/jobs/${job._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+    
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Job Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                      })
+                }
+            })
+      };
+
+      console.log(job)
 
     return (
         <div>
       <div className="bg-[#f1f3f5] rounded-xl md:p-24 p-4 my-20">
         <h2 className="text-3xl mb-10 text-center font-extrabold">
-          Add Your <span className="text-[#1e3c72]">Jobs</span>
+          Update Your <span className="text-[#1e3c72]">Jobs</span>
         </h2>
-        <form onSubmit={handleAddJob}>
+        <form onSubmit={handleUpdateJob}>
           {/* form email and job row */}
           <div className="md:flex gap-4 mb-8">
             <div className="form-control   md:w-1/2 ">
@@ -41,6 +98,7 @@ const Update = () => {
                   type="text"
                   required
                   placeholder="Job Title"
+                  defaultValue={job.job}
                   name="job"
                   className="input  form-border input-bordered w-full"
                 />
@@ -60,6 +118,7 @@ const Update = () => {
                   required
                   placeholder="Deadline"
                   name="deadline"
+                  defaultValue={job.deadline}
                   className="input  form-border input-bordered w-full"
                 />
               </label>
@@ -75,6 +134,7 @@ const Update = () => {
                   required
                   placeholder="Description"
                   name="description"
+                  defaultValue={job.description}
                   className="input form-border  input-bordered w-full"
                 />
               </label>
@@ -93,6 +153,7 @@ const Update = () => {
                   required
                   placeholder="Maximum Price"
                   name="maxprice"
+                  defaultValue={job.maxprice}
                   className="input form-border  input-bordered w-full"
                 />
               </label>
@@ -105,6 +166,7 @@ const Update = () => {
               <label className="input-group">
                 <input
                   type="number"
+                  defaultValue={job.minprice}
                   required
                   placeholder="Minimum Price"
                   name="minprice"
@@ -125,6 +187,7 @@ const Update = () => {
                 <select
                   name="category"
                   required
+                  defaultValue={job.category}
                   className="select select-bordered w-full"
                 >
                   <option value="" disabled selected>
@@ -138,7 +201,7 @@ const Update = () => {
             </div>
           </div>
           
-          <button type="submit" className="btn btn-block btn-grad form-border">Add Job</button>
+          <button type="submit" className="btn btn-block btn-grad form-border">Update Job</button>
          
 
    

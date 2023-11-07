@@ -191,7 +191,11 @@ const AddJob = () => {
             </div>
           </div>
           
-          <button type="submit" className="btn btn-block btn-grad form-border">Add Job</button>
+          {/* <button type="submit" className="btn btn-block btn-grad form-border">Add Job</button> */}
+
+          {/* <button type="submit" className="btn btn-block btn-grad form-border"><Link to='/myjob'>Add Job</Link></button> */}
+
+          <Link to='/myjob'><button type="submit" className="btn btn-block btn-grad form-border">Add Job</button></Link>
          
 
    

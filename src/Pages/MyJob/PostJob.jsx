@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BsFillPencilFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
-import Swal from "sweetalert2";
+
 
 
 const PostJob = ({ job, handleDelete }) => {
