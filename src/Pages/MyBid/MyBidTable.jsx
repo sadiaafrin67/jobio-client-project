@@ -1,36 +1,52 @@
+import PropTypes from 'prop-types';
+import { AuthContext } from '../../Providers/AuthProvider';
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+const MyBidTable = ({mybid}) => {
 
-const MyBidTable = () => {
+  const [job, setJobs] = useState([]);
+
+    const {user} = useContext(AuthContext);
+
+   useEffect(() => {
+    fetch('http://localhost:5000/jobs')
+    .then(res => res.json())
+    .then(data => {
+        setJobs(data)
+    })
+   }, [])
+
+   const title = job?.job
+   console.log(title)
+     
+
     return (
         <tr>
         <th>
-    <button  className="btn btn-sm btn-circle">
-<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
+         aa
         </th>
-        <td>
+        <td className='font-bold'>
          
-            <div className="avatar">
-              <div className="rounded w-24 h-24">
-                {/* {img && <img src={img} />} */}
-              </div>
-            
-            
-          </div>
+           {mybid.email}
         </td>
-        <td>
-          aa
+        <td className='font-bold'>
+          {mybid.deadline}
           
         </td>
-        <td>dd</td>
-        <td>dd</td>
+        <td className='font-bold'>Pending</td>
+       
         <th>
-         {
-         status === 'confirm' ? <span className="font-bo;d text-primary">Confirmed</span> : 
-         <button  className="btn btn-ghost btn-xs">Please Confirm</button>}
+       <button className='btn btn-ghost btn-sm text-white bg-[#2a5298]'>Complete</button>
         </th>
       </tr>
     );
 };
+
+MyBidTable.propTypes = {
+    mybid: PropTypes.object
+}
+
+
 
 export default MyBidTable;

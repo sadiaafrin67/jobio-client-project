@@ -9,7 +9,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Error/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
-import Jobdetails from "../Pages/Home/Banner/Job/Jobdetails";
+import Jobdetails from "../Pages/Home/Job/Jobdetails";
+
 
 
 const route = createBrowserRouter([
@@ -33,6 +34,7 @@ const route = createBrowserRouter([
             {
                 path: "/mybids",
                 element: <PrivateRoute><MyBid></MyBid></PrivateRoute>,
+               
             },
             {
                 path: "/bidreq",

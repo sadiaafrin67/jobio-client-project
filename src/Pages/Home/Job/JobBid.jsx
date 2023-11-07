@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../../Providers/AuthProvider";
+import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useParams } from "react-router-dom";
 
@@ -81,8 +81,8 @@ const JobBid = () => {
         </h2>
         <form onSubmit={handleBids}>
           {/* form emails row */}
-          <div className="md:flex gap-4 mb-8">
-            <div className="form-control   md:w-1/2 ">
+          <div className="  gap-4 mb-8">
+            <div className="form-control    ">
               <label className="label ">
                 <span className="label-text ">Email</span>
               </label>
@@ -99,7 +99,7 @@ const JobBid = () => {
               </label>
             </div>
 
-            <div className="form-control md:w-1/2">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Buyer Email</span>
               </label>
@@ -118,8 +118,8 @@ const JobBid = () => {
           </div>
 
           {/* from deadline and bidprice row */}
-          <div className="md:flex gap-4 mb-8">
-            <div className="form-control md:w-1/2">
+          <div className=" gap-4 mb-8">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Deadline</span>
               </label>
@@ -134,7 +134,7 @@ const JobBid = () => {
               </label>
             </div>
 
-            <div className="form-control md:w-1/2">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Price</span>
               </label>

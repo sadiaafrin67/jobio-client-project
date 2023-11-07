@@ -1,6 +1,8 @@
 
-import JobCat from "./Banner/Job/JobCat";
+
 import Banner from './Banner/Banner';
+// import BannerShare from "../../Shared/BannerShare";
+import JobCat from '../../Pages/Home/Job/JobCat';
 
 
 
@@ -8,7 +10,8 @@ const Home = () => {
     return (
         <div>
           <Banner></Banner>
-          <JobCat></JobCat>
+         <JobCat></JobCat>
+          {/* <BannerShare></BannerShare> */}
         </div>
     );
 };

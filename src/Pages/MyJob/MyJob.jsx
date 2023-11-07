@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import PostJob from "./PostJob";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const MyJob = () => {
 
     const [jobs, setJobs] = useState();
+    const {user} = useContext(AuthContext);
 
     useEffect(() => {
         fetch('http://localhost:5000/jobpost')
@@ -14,6 +17,8 @@ const MyJob = () => {
         
     }, [])
 
+    const filterUser = jobs?.filter(myBid => myBid?.email == user?.email);
+
     console.log(jobs)
 
     return (
@@ -21,7 +26,7 @@ const MyJob = () => {
             <h2>This is MyJob: {jobs?.length} </h2>
             <div>
                 {
-                    jobs?.map(job => <p key={job._id}>{job.job}</p>)
+                    filterUser?.map(job => <PostJob key={job._id} job={job}></PostJob>)
                 }
             </div>
         </div>

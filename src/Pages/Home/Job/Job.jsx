@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../../Providers/AuthProvider";
-import { useContext, useEffect, useState } from "react";
+
+import { useContext,  useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Job = ({ job }) => {
   console.log(job.email)
