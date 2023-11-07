@@ -3,43 +3,14 @@ import { Link } from "react-router-dom";
 import { BsFillPencilFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-import { useState } from "react";
 
-const PostJob = ({ job }) => {
+
+const PostJob = ({ job, handleDelete }) => {
   console.log(job);
 
-  const [jobs, setjobs] = useState([])
 
-  const handleDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/jobs/${id}`, {
-          method: "DELETE"
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-                console.log(data)
-              Swal.fire("Deleted!", "Your posted job has been deleted.", "success");
 
-              const remaining =jobs.length && jobs?.filter((item) => item._id !== id);
-              console.log(remaining)
 
-              setjobs(remaining);
-            }
-          });
-      }
-    });
-  }
 
   return (
     <div>
@@ -57,6 +28,12 @@ const PostJob = ({ job }) => {
           Price Range:{" "}
           <span className="text-[#1e3c72]">
             {job.minprice}$ - {job.maxprice}$
+          </span>
+        </p>
+        <p className="mb-3 text-lg font-medium text-gray-800">
+          Job Category:{" "}
+          <span className="text-[#1e3c72]">
+            {job.category}
           </span>
         </p>
         <p className="mb-3 font-medium text-gray-800 ">
@@ -84,6 +61,9 @@ const PostJob = ({ job }) => {
 
 PostJob.propTypes = {
   job: PropTypes.object,
+  setjobs: PropTypes.func,
+  jobs: PropTypes.array,
+  handleDelete: PropTypes.func
 };
 
 export default PostJob;

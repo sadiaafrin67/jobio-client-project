@@ -31,6 +31,7 @@ const route = createBrowserRouter([
             {
                 path: "/myjob",
                 element: <PrivateRoute><MyJob></MyJob></PrivateRoute>,
+               
             },
             {
                 path: "/mybids",
@@ -57,6 +58,7 @@ const route = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`),
             }
         ]
       },

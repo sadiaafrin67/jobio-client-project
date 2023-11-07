@@ -34,6 +34,7 @@ const Job = ({ job }) => {
       <p className="mb-3 text-lg font-medium text-gray-800">
         Deadline: {job.deadline}
       </p>
+     
       <p className="mb-3 text-lg font-medium text-gray-800">
         Price Range: {job.minprice}$ - {job.maxprice}$
       </p>

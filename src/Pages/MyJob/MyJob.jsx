@@ -3,6 +3,7 @@ import PostJob from "./PostJob";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Lottie from 'lottie-react'
 import animation from '../../assets/job-post.json'
+import Swal from "sweetalert2";
 
 const MyJob = () => {
 
@@ -18,6 +19,37 @@ const MyJob = () => {
         
     }, [])
 
+    const handleDelete = (id) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            fetch(`http://localhost:5000/jobs/${id}`, {
+              method: "DELETE"
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    console.log(data)
+                  Swal.fire("Deleted!", "Your posted job has been deleted.", "success");
+
+                  const remaining = jobs.filter(job => job._id !== id);
+                  setJobs(remaining)
+    
+                  
+                }
+              });
+          }
+        });
+      }
+
     const filterUser = jobs?.filter(myBid => myBid?.email == user?.email);
 
     console.log(jobs)
@@ -32,7 +64,7 @@ const MyJob = () => {
          
             <div className="space-y-4 lg:w-1/2 w-full">
                 {
-                    filterUser?.map(job => <PostJob key={job._id} job={job}></PostJob>)
+                    filterUser?.map(job => <PostJob handleDelete={handleDelete} key={job._id}   job={job}></PostJob>)
                 }
             </div>
         </div>
