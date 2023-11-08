@@ -27,7 +27,7 @@ const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
 
       <th>
         {status?.status == "Pending" && (
-          <div>
+          <div className="flex gap-2">
             <button
               onClick={() => handlejobConfirm(_id)}
               className="btn btn-ghost btn-sm text-white  bg-[#2a5298]"
@@ -36,7 +36,7 @@ const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
             </button>{" "}
             <button
               onClick={() => handlejobReject(_id)}
-              className="btn btn-ghost btn-sm text-white bg-[#2a5298]"
+              className="btn bg-red-600 btn-ghost btn-sm text-white "
             >
               Reject
             </button>
