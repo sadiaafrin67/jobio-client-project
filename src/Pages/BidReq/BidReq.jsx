@@ -23,7 +23,7 @@ const BidReq = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/bids')
+        fetch('https://jobio-server.vercel.app/bids')
             .then(res => res.json())
             .then(data => {
                 setBidReq(data)
@@ -32,7 +32,7 @@ const BidReq = () => {
 //  console.log(filterJob)
 
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch('https://jobio-server.vercel.app/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data)
@@ -41,7 +41,7 @@ const BidReq = () => {
     // console.log(job)
 
     const handlejobConfirm = id => {
-        fetch(`http://localhost:5000/bids/${id}`, {
+        fetch(`https://jobio-server.vercel.app/bids/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -65,7 +65,7 @@ const BidReq = () => {
 
 
     const handlejobReject = id => {
-        fetch(`http://localhost:5000/bids/${id}`,   {
+        fetch(`https://jobio-server.vercel.app/bids/${id}`,   {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

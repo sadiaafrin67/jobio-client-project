@@ -16,7 +16,7 @@ const MyBid = () => {
   console.log(filterJob);
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs", )
+    fetch("https://jobio-server.vercel.app/jobs", )
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -27,13 +27,13 @@ const MyBid = () => {
 
   useEffect(() => {
   
-    // axios.get('http://localhost:5000/bids', )
+    // axios.get('https://jobio-server.vercel.app/bids', )
     // .then(res => {
     //   setMyJobs(res.data)
     // })
 
 
-    fetch('http://localhost:5000/bids')
+    fetch('https://jobio-server.vercel.app/bids')
       .then(res => res.json())
       .then(data => {
         setMyJobs(data)

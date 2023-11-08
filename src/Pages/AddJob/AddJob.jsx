@@ -38,7 +38,7 @@ const navigate = useNavigate()
 
    
 
-    fetch('http://localhost:5000/jobs', {
+    fetch('https://jobio-server.vercel.app/jobs', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

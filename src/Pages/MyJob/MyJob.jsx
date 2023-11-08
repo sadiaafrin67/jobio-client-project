@@ -12,7 +12,7 @@ const MyJob = () => {
     const {user} = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/jobpost')
+        fetch('https://jobio-server.vercel.app/jobpost')
             .then(res => res.json())
             .then(data => {
                 setJobs(data)
@@ -31,7 +31,7 @@ const MyJob = () => {
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/jobs/${id}`, {
+            fetch(`https://jobio-server.vercel.app/jobs/${id}`, {
               method: "DELETE"
             })
               .then((res) => res.json())

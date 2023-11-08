@@ -18,7 +18,7 @@ const JobBid = ({jobs}) => {
     
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs/${id}`)
+        fetch(`https://jobio-server.vercel.app/jobs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setJobs(data)
@@ -50,7 +50,7 @@ const JobBid = ({jobs}) => {
 
 
        
-            fetch('http://localhost:5000/bids', {
+            fetch('https://jobio-server.vercel.app/bids', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
