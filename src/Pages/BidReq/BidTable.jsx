@@ -23,7 +23,7 @@ const BidTable = ({ mybid, handlejobConfirm, handlejobReject }) => {
 
       {status?.status == "Pending" && <td className="font-bold">Pending</td>}
 
-      {status == "Reject" && <td className="font-bold">Reject</td>}
+      {status == "Reject" && <td className="font-bold">Rejected</td>}
 
       <th>
         {status?.status == "Pending" && (
