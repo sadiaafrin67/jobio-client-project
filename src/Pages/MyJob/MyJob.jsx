@@ -5,6 +5,7 @@ import Lottie from 'lottie-react'
 import animation from '../../assets/job-post.json'
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+// import animation from '../../assets/no data.json'
 
 const MyJob = () => {
 
@@ -76,3 +77,10 @@ const MyJob = () => {
 };
 
 export default MyJob;
+
+
+
+
+
+
+

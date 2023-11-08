@@ -1,8 +1,33 @@
-# React + Vite
+# JobIO - Your Job Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+JobIO is a web platform that connects job seekers and employers, allowing users to post jobs or bid on existing ones. This README provides a quick guide to get you started with JobIO.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Live Link
+
+[JobIO Live](https://jobio-client-project.web.app)
+
+## Functions
+
+1. **Bid on Jobs**
+   - Users can bid on jobs they are interested in.
+   - Set your own price and specify a deadline for your bid.
+
+2. **Manage Bids**
+   - Control your bids by viewing and managing them easily.
+   - Keep track of your bid history and make adjustments as needed.
+
+3. **Post Jobs**
+   - Users can post their own jobs with detailed descriptions.
+   - Specify the criteria and requirements for the job posting.
+
+4. **Manage Posted Jobs**
+   - See who has bid on your posted jobs.
+   - Accept or reject bids based on your preferences.
+
+5. **Update/Delete Jobs**
+   - Manage your job posts by updating or deleting them.
+   - Keep your job listings current and relevant.
+
+
