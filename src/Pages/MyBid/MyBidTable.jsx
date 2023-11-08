@@ -5,7 +5,7 @@ const MyBidTable = ({ mybid }) => {
 
   const [isComplete, setIsComplete] = useState(false)
   const {status, _id} = mybid
-  console.log(status)
+  // console.log(status)
 
   const dinamicStatus = () => {
     if(status == 'Accept'){
@@ -16,7 +16,7 @@ const MyBidTable = ({ mybid }) => {
       return 'Pending'
     }
   }
-console.log(_id)
+// console.log(_id)
 
   const handleComplete = () => {
   
@@ -35,7 +35,7 @@ console.log(_id)
     } )
     .then(res => res.json())    
     .then(data => {
-        console.log(data)
+        // console.log(data)
         // if(data.modifiedCount > 0){
         //     const remaining = bidReq.filter(bid => bid._id !== id);
         //     const updated = bidReq.find(bid => bid._id == id);
