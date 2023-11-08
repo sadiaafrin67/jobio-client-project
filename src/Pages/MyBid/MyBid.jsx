@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyBidTable from "./MyBidTable";
+import axios from "axios";
 
 const MyBid = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const MyBid = () => {
   console.log(filterJob);
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    fetch("http://localhost:5000/jobs", )
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -24,6 +25,13 @@ const MyBid = () => {
   
 
   useEffect(() => {
+  
+    // axios.get('http://localhost:5000/bids', )
+    // .then(res => {
+    //   setMyJobs(res.data)
+    // })
+
+
     fetch('http://localhost:5000/bids')
       .then(res => res.json())
       .then(data => {

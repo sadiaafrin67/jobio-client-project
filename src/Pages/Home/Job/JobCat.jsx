@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Job from './Job';
+import axios from 'axios';
 
 const JobCat = () => {
 
@@ -13,6 +14,12 @@ const JobCat = () => {
 
 
     useEffect(() => {
+
+      
+
+
+
+
         fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {

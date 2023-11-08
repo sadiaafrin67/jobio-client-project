@@ -64,7 +64,7 @@ const BidReq = () => {
 
 
     const handlejobReject = id => {
-        fetch(`http://localhost:5000/bids/${id}`, {
+        fetch(`http://localhost:5000/bids/${id}`,   {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

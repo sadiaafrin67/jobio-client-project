@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 
 const JobBid = ({jobs}) => {
 
+  const navigate = useNavigate()
     const [job, setJobs] = useState([]);
 
     const {user} = useContext(AuthContext);
@@ -68,6 +69,7 @@ const JobBid = ({jobs}) => {
                             icon: 'success',
                             confirmButtonText: 'Ok'
                           })
+                          navigate('/mybids')
                     }
                 })
        
@@ -155,14 +157,14 @@ const JobBid = ({jobs}) => {
             </div>
           </div>
 
-          
+          <button type="submit" className="btn btn-block btn-grad form-border">Bid On The Project</button>
 
          
-          <input
+          {/* <input
             type="submit"
             value="Bid On The Project"
             className="btn btn-block btn-grad form-border"
-          />
+          /> */}
          
         </form>
       </div>
