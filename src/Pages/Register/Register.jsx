@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import swal from "sweetalert";
 import Lottie from "lottie-react";
 import animation from "../../assets/animation_lokjqh8c.json";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -60,6 +61,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>JobIO | Register</title>
+      </Helmet>
       <div>
         <div className="md:my-20 my-10   ">
           <div className="hero-content  flex-col lg:flex-row    ">

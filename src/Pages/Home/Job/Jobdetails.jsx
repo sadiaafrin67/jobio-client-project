@@ -2,6 +2,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import JobBid from "./JobBid";
 import Lottie from "lottie-react";
 import animation from "../../../assets/detail.json";
+import { Helmet } from "react-helmet-async";
 
 const Jobdetails = () => {
   const jobs = useLoaderData();
@@ -12,6 +13,9 @@ const Jobdetails = () => {
 
   return (
     <div className="lg:flex felx-col">
+      <Helmet>
+        <title>JobIo | Bid</title>
+      </Helmet>
       <div className="lg:w-1/2 w-full flex justify-center lg:h-[800px]">
         <Lottie animationData={animation} />
       </div>

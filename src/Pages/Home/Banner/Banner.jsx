@@ -15,7 +15,7 @@ const Banner = () => {
              JobIO is one of the most biggest and trust worthymarket place ever. Find your dream job here
             </p>
             <div>
-            <form  className="md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
+            <form  className="md:w-[470px] hidden sm:flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"
@@ -60,7 +60,7 @@ const Banner = () => {
             </p>
             <div>
 
-            <form  className=" md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
+            <form  className=" md:w-[470px] hidden sm:flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"
@@ -104,7 +104,7 @@ const Banner = () => {
              JobIO is one of the most biggest and trust worthy marketplace ever. Find your dream job here
             </p>
             <div>
-            <form  className="md:w-[470px]  flex justify-center items-center  mx-auto text-center ">
+            <form  className="md:w-[470px] hidden sm:flex justify-center items-center  mx-auto text-center ">
           <input
             
             className="py-2.5 px-3 text-black rounded-l-lg md:w-[470px] border-gray-300 border"

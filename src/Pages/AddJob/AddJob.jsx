@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddJob = () => {
 
@@ -62,6 +63,9 @@ const navigate = useNavigate()
 
   return (
     <div>
+      <Helmet>
+        <title>JobIO | Add Job</title>
+      </Helmet>
       <div className="bg-[#f1f3f5] rounded-xl md:p-24 p-4 my-20">
         <h2 className="text-3xl mb-10 text-center font-extrabold">
           Add Your <span className="text-[#1e3c72]">Jobs</span>

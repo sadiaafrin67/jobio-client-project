@@ -6,6 +6,7 @@ import swal from "sweetalert";
 import "./Login.css";
 import Lottie from "lottie-react";
 import animation from "../../assets/tree.json";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { SignInUser, signInWithGoogle } = useContext(AuthContext);
@@ -51,6 +52,9 @@ const Login = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Jobio | Login</title>
+      </Helmet>
       <div className=" my-10 md:my-20  ">
         <div className="hero-content flex-col lg:flex-row ">
           <div className="lg:w-1/2 w-full ">

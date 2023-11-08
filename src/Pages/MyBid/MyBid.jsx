@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyBidTable from "./MyBidTable";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const MyBid = () => {
   const { user } = useContext(AuthContext);
@@ -43,6 +44,9 @@ const MyBid = () => {
 
   return (
     <div className="mt-10 mb-20 ">
+      <Helmet>
+        <title>JobIO | My Bid</title>
+      </Helmet>
       <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}

@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Lottie from 'lottie-react'
 import animation from '../../assets/job-post.json'
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyJob = () => {
 
@@ -56,6 +57,9 @@ const MyJob = () => {
 
     return (
         <div className="mt-10 mb-20 lg:flex lg:flex-row-reverse">
+          <Helmet>
+            <title>JobIO | My Posted Job</title>
+          </Helmet>
 
 <div className='lg:w-1/2 w-full'>
             <Lottie animationData={animation}></Lottie>

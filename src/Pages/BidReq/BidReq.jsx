@@ -3,6 +3,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { useState } from "react";
 import { useEffect } from "react";
 import BidTable from "./BidTable";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -86,6 +87,9 @@ const BidReq = () => {
 
     return (
         <div className="mt-10 mb-20 ">
+          <Helmet>
+            <title>JobIO | Bid Request</title>
+          </Helmet>
         <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}
