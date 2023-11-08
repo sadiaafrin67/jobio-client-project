@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import PropTypes from 'prop-types';
 import { Navigate, useLocation } from "react-router-dom";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const PrivateRoute = ({ children }) => {
 
@@ -11,9 +12,10 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="flex h-[80vh] justify-center items-center ">
-        <span className="loading loading-spinner text-error w-[4rem] h-[4rem]"></span>
-      </div>
+      // <div className="flex h-[80vh] justify-center items-center ">
+      //   <span className="loading loading-spinner text-info w-[4rem] h-[4rem]"></span>
+      // </div>
+      <LoadingPage></LoadingPage>
     );
   }
 

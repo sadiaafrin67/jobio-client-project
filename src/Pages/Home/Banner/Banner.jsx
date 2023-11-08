@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="carousel mt-10 mb-20 w-full h-[600px]">
+    <div  className="carousel  mt-10 mb-20 w-full h-[600px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img
           src="https://www.careerslinked.com/wp-content/uploads/2021/06/top-international-job-sites.jpeg"

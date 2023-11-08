@@ -10,35 +10,28 @@ const MyBid = () => {
   const [myJob, setMyJobs] = useState([]);
   // console.log(job)
 
-
-
   const filterJob = myJob?.filter((job) => job?.email == user?.email);
   console.log(filterJob);
 
+ 
+
+ 
+
   useEffect(() => {
-    fetch("https://jobio-server.vercel.app/jobs", )
+    fetch("https://jobio-server.vercel.app/jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
       });
   }, []);
 
-  
-
   useEffect(() => {
-  
-    // axios.get('https://jobio-server.vercel.app/bids', )
-    // .then(res => {
-    //   setMyJobs(res.data)
-    // })
-
-
-    fetch('https://jobio-server.vercel.app/bids')
-      .then(res => res.json())
-      .then(data => {
-        setMyJobs(data)
-      })
-  }, [])
+    fetch("https://jobio-server.vercel.app/bids")
+      .then((res) => res.json())
+      .then((data) => {
+        setMyJobs(data);
+      });
+  }, []);
 
   // console.log(myJob.jobTitle)
 
@@ -47,7 +40,12 @@ const MyBid = () => {
       <Helmet>
         <title>JobIO | My Bid</title>
       </Helmet>
+
       <div className="overflow-x-auto ">
+        <div className="text-end my-3">
+          <button className="btn rounded-lg btn-outline btn-info">Sort</button>
+        </div>
+
         <table className="table">
           {/* head */}
           <thead>

@@ -29,7 +29,7 @@ const Job = ({ job }) => {
 
 
   return (
-    <div className=" p-6 bg-white border border-gray-200 rounded-lg shadow ">
+    <div  className=" p-6 bg-white border border-gray-200 rounded-lg shadow ">
       <a href="#">
         <h5 className="mb-2 text-xl font-bold tracking-tight text-[#1e3c72] ">
           {job.job}

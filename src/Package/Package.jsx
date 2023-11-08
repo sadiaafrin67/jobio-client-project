@@ -12,7 +12,7 @@ const Package = () => {
         right for you.
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="relative flex w-full  flex-col rounded-xl bg-gradient-to-tr from-blue-950 to-blue-400 bg-clip-border p-8 text-white shadow-md shadow-blue-500/40">
+        <div    className="relative flex w-full  flex-col rounded-xl bg-gradient-to-tr from-blue-950 to-blue-400 bg-clip-border p-8 text-white shadow-md shadow-blue-500/40">
           <div className="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none border-white/10 bg-clip-border">
             <p className="block font-sans text-2xl antialiased font-bold leading-normal text-white uppercase">
               Basic
