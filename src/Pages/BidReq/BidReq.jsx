@@ -90,6 +90,8 @@ const BidReq = () => {
           <Helmet>
             <title>JobIO | Bid Request</title>
           </Helmet>
+
+          <p className="text-2xl font-bold text-center mb-8">All Bid <span className="text-[#2a5298]">Request</span></p>
         <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}

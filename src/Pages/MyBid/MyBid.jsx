@@ -174,12 +174,17 @@ const handleSort = () => {
   <Helmet>
     <title>JobIO | My Bid</title>
   </Helmet>
-  <div className="overflow-x-auto ">
-    <div className="text-end my-3">
+
+  <div className="text-end my-3 mr-2">
       <button onClick={handleSort} className="btn rounded-lg btn-outline btn-info" >
         Sort
       </button>
     </div>
+
+    <p className="text-2xl font-bold text-center mb-8">My Job <span className="text-[#2a5298]">Bids</span></p>
+
+  <div className="overflow-x-auto ">
+  
 
     <table className="table">
       <thead>
