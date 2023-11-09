@@ -35,7 +35,7 @@ const MyBidTable = ({ mybid }) => {
     } )
     .then(res => res.json())    
     .then(data => {
-        // console.log(data)
+        console.log(data)
         // if(data.modifiedCount > 0){
         //     const remaining = bidReq.filter(bid => bid._id !== id);
         //     const updated = bidReq.find(bid => bid._id == id);
